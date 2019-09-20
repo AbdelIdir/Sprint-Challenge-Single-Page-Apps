@@ -27,8 +27,7 @@ Demonstrate your understanding of this Sprint's concepts by answering the follow
 
 - [ ]  Explain benefit(s) using `client-side routing`?
 
-> Answer: No rreload of the page everytime
-
+> Answer: initial
 ## Project Set Up
 
 Follow these steps to set up and work on your project:
