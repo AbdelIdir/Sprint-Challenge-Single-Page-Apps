@@ -3,31 +3,25 @@ import axios from "axios";
 import CharacterCard from "./CharacterCard";
 import { tsPropertySignature } from "@babel/types";
 import WelcomePage from "./WelcomePage";
-import {
-  BrowserRouter as Router,
-  Route,
-  Link,
-} from 'react-router-dom';
-
+import { BrowserRouter as Router, Route, Link } from "react-router-dom";
 
 export default function CharacterList() {
   // TODO: Add useState to track data from useEffect
-  const [ characters, setCharacters ] = useState([]);
+  const [characters, setCharacters] = useState([]);
   // debugger
-  const api = 'https://rickandmortyapi.com/api/character/';
+  const api = "https://rickandmortyapi.com/api/character/";
 
+  useEffect(() => {
+    axios
+      .get(api)
+      .then(resp => {
+        setCharacters(resp.data.results);
+      })
 
-useEffect( () => {
-  axios.get(api)
-    .then( resp => {
-      setCharacters( resp.data.results)
-      
-    })
-    
-    .catch(error => {
-      console.log( error);
-  })
-}, []);
+      .catch(error => {
+        console.log(error);
+      });
+  }, []);
 
   return (
     <section className="character-list">
@@ -40,8 +34,7 @@ useEffect( () => {
             status={char.status}
             gender={char.gender}
             location={char.location.name}
-            image= {char.image}
-            
+            image={char.image}
           />
         );
       })}

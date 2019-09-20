@@ -8,6 +8,8 @@ export default function CharacterCard(props) {
   const StyledCardHolder = styled.div`
   
   background: yellow;
+
+  
   
   `
 
