@@ -4,6 +4,7 @@ import CharacterList from "./components/CharacterList";
 import WelcomePage from "./components/WelcomePage.js";
 import { BrowserRouter as Router, Route, Link } from "react-router-dom";
 import styled from "styled-components";
+import 'bootstrap/dist/css/bootstrap.min.css';
 
 const StyledDiv = styled.div`
   background: white;
