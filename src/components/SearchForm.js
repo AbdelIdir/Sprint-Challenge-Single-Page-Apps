@@ -23,12 +23,12 @@ export default function SearchForm(props) {
                 <Field
                   name="searching"
                   type="text"
-                  placeholder="Search Something"
+                  placeholder="Type in a character"
                 />
               </label>
             </div>
 
-            <button type="submit"> Search now !</button>
+            <button type="submit"> Search Now!</button>
           </Form>
         );
       }}

@@ -3,6 +3,9 @@ import styled from "styled-components";
 import "bootstrap/dist/css/bootstrap.min.css";
 import Card from "react-bootstrap/Card";
 import Button from "react-bootstrap/Button";
+
+
+
 export default function CharacterCard(props) {
   const StyledCardHolder = styled.div`
     margin: 30px;
