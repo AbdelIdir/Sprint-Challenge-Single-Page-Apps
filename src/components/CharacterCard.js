@@ -7,6 +7,8 @@ export default function CharacterCard(props) {
 
   const StyledCardHolder = styled.div`
   
+  margin: 30px;
+  padding: 20px;
   background: yellow;
 
   
