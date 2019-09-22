@@ -9,8 +9,9 @@ import styled from "styled-components";
 export default function CharacterList() {
   // TODO: Add useState to track data from useEffect
   const [characters, setCharacters] = useState([]);
+  const [error,setError] = useState();
   // debugger
-  const api = "https://rickandmortyapi.com/api/character/";
+  const api = "https://rickandmortyapi.com/api/character";
 
   useEffect(() => {
     axios
@@ -20,8 +21,8 @@ export default function CharacterList() {
       })
 
       .catch(error => {
-        console.log(error);
-      });
+        setError(alert(`Check your api Link for any typo: ${error}`));
+   });
   }, []);
   const CardSDiv = styled.div`
     display: flex;
@@ -29,7 +30,12 @@ export default function CharacterList() {
     justify-content:center;
   `;
   return (
+
     <section className="character-list">
+
+    
+    {error}
+    
       <CardSDiv>
         {characters.map(char => {
           return (

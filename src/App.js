@@ -12,11 +12,12 @@ const StyledDiv = styled.div`
   font-size: 30px;
   display: flex;
   justify-content: space-around;
-  margin: 0 60px 0 60px;
+  margin: 20px 60px 20px 60px;
 `;
 
 export default function App() {
   return (
+    
     <main>
       <Header />
       <StyledDiv>
