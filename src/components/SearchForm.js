@@ -4,6 +4,10 @@ import { Formik, Form, Field, ErrorMessage } from "formik";
 export default function SearchForm(props) {
   const [searchQuery, setSearchQuery] = useState("");
 
+  
+  const handleQuery = e => {
+    e.preventdefault();
+  }
   const fieldQueriesV = e => {
     setSearchQuery(e.target.value);
   };
@@ -13,7 +17,7 @@ export default function SearchForm(props) {
   return (
     <Formik
       initialValues={searchQuery}
-      onSubmit={makeASearch}
+       onSubmit={handleQuery}
       //formik functions here
       render={props => {
         return (
@@ -23,12 +27,12 @@ export default function SearchForm(props) {
                 <Field
                   name="searching"
                   type="text"
-                  placeholder="Search Something"
+                  placeholder="Type in a character"
                 />
               </label>
             </div>
 
-            <button type="submit"> Search now !</button>
+            <button type="submit"> Search Now!</button>
           </Form>
         );
       }}
