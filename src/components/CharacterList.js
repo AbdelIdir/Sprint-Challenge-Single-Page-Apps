@@ -31,13 +31,10 @@ export default function CharacterList() {
     event.preventDefault();
 
     const foundCharacter = characters.find(
-      char => char.name &&  char.name === event.target.search.value
+      char => char.name === event.target.search.value
     );
 
-    setSearchResults(foundCharacter)
-    
-    
-    ;
+    setSearchResults(foundCharacter);
   };
 
   const CardSDiv = styled.div`
