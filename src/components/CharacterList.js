@@ -31,7 +31,9 @@ export default function CharacterList() {
     event.preventDefault();
 
     const foundCharacter = characters.find(
-      char => char.name === event.target.search.value
+      char =>
+        char.name.toUpperCase().toLowerCase() ===
+        event.target.search.value.toUpperCase().toLowerCase()
     );
 
     setSearchResults(foundCharacter);

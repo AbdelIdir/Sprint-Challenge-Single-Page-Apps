@@ -9,7 +9,7 @@ export default function SearchForm(props) {
     return (
       <div>
         <p>
-          This character does not exist, Please type the full name of a charater
+          This character does not exist, Please type the full name of a character
           again.
         </p>
         <form onSubmit={props.handleSubmit}>
