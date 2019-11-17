@@ -6,13 +6,12 @@ import Button from "react-bootstrap/Button";
 
 export default function CharacterCard(props) {
   const StyledCardHolder = styled.div`
-    margin: 30px;
     padding: 20px;
   `;
 
   return (
     <StyledCardHolder>
-      <Card style={{ width: "18rem" }}>
+      <Card style={{ width: "38rem", height: "13rem", textAlign: "center" }}>
         <Card.Img variant="top" src={props.image} />
         <Card.Body>
           <Card.Title>{props.name}</Card.Title>

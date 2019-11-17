@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from "react";
 import LocationCard from "./LocationCard";
 import axios from "axios";
+import styled from "styled-components";
 
 export default function LocationsList() {
   const [locations, setLocations] = useState([]);
@@ -10,9 +11,14 @@ export default function LocationsList() {
       setLocations(answer.data.results);
     });
   }, []);
-
+  const StyledCardHolder = styled.div`
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  `;
   return (
-    <div>
+    <StyledCardHolder>
       {locations.map(locate => {
         return (
           <LocationCard
@@ -24,6 +30,6 @@ export default function LocationsList() {
           />
         );
       })}
-    </div>
+    </StyledCardHolder>
   );
 }
