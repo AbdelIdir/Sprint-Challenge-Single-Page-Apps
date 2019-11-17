@@ -2,7 +2,8 @@ import React from "react";
 import Header from "./components/Header.js";
 import CharacterList from "./components/CharacterList";
 import WelcomePage from "./components/WelcomePage.js";
-import { Route, Link } from "react-router-dom";
+import LocationList from "./components/LocationsList";
+import { Route, NavLink } from "react-router-dom";
 import styled from "styled-components";
 import "bootstrap/dist/css/bootstrap.min.css";
 
@@ -19,11 +20,15 @@ export default function App() {
     <main>
       <Header />
       <StyledDiv>
-        <Link to="/">Home</Link>
-        <Link to="/characters">Characters</Link>
+        <NavLink exact to="/">
+          Home
+        </NavLink>
+        <NavLink to="/characters">Characters</NavLink>
+        <NavLink to="/locations">Locations</NavLink>
       </StyledDiv>
       <Route exact path="/" component={WelcomePage} />
       <Route exact path="/characters" component={CharacterList} />
+      <Route exact path="/locations" component={LocationList} />
     </main>
   );
 }

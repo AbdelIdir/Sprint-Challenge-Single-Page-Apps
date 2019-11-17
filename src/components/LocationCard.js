@@ -1,5 +1,16 @@
 import React from "react";
 
 export default function LocationCard({ name, type, dimension, residents }) {
-  return <span>todo: location</span>;
+  return <div>
+
+ <p>hmmmm hi</p>
+
+
+
+
+
+
+
+
+  </div>
 }

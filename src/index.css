@@ -147,3 +147,7 @@ header h1 {
     animation-timing-function: ease-out;
   }
 }
+
+.active {
+  text-decoration: underline;
+}
