@@ -10,21 +10,28 @@ export default function CharacterList() {
   const [characters, setCharacters] = useState([]);
   const [error, setError] = useState();
   const [searchResults, setSearchResults] = useState({});
-
+  const [mainApi, setMainApi] = useState(
+    "https://rickandmortyapi.com/api/character"
+  );
+  const [page, setPage] = useState("");
   // debugger
   const api = "https://rickandmortyapi.com/api/character";
 
   useEffect(() => {
     axios
-      .get(api)
+      .get(mainApi)
       .then(resp => {
-        setCharacters(resp.data.results);
+        let pageSystem = resp.data.info;
+        console.log(pageSystem);
+        setPage(pageSystem);
+        let res = resp.data.results;
+        setCharacters(res);
       })
 
       .catch(error => {
-        setError(alert(`Check your api Link for any typo: ${error}`));
+        setError(alert(`Something is wrong with your request ${error}`));
       });
-  }, []);
+  }, [mainApi]);
 
   const handleSubmit = event => {
     // console.log(props.characters);
@@ -35,7 +42,6 @@ export default function CharacterList() {
         char.name.toUpperCase().toLowerCase() ===
         event.target.search.value.toUpperCase().toLowerCase()
     );
-
     setSearchResults(foundCharacter);
   };
 
@@ -54,10 +60,13 @@ export default function CharacterList() {
           handleSubmit={handleSubmit}
           searchResults={searchResults}
         />
+        <button onClick={() => setMainApi(page.prev)}>previous</button>
+        <button onClick={() => setMainApi(page.next)}>next</button>
+
         {characters.map(char => {
           return (
             <CharacterCard
-              key={char.name}
+              key={char.id}
               name={char.name}
               species={char.species}
               status={char.status}
