@@ -14,8 +14,8 @@ export default function CharacterList() {
     "https://rickandmortyapi.com/api/character"
   );
   const [page, setPage] = useState("");
+
   // debugger
-  const api = "https://rickandmortyapi.com/api/character";
 
   useEffect(() => {
     axios
